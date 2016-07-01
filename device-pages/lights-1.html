@@ -1,0 +1,38 @@
+
+    <div ui-content-for="title">
+        <span>灯光控制</span>
+    </div>
+
+    <div class="scrollable">
+        <div class="scrollable-content">
+
+            <div class="container-fluid section section-break" id="lights">
+                <center><span style="align-content: center;font-size: large">1号灯</span></center>
+                <p ui-state id='lightbulb'
+                   ui-class="{'text-primary': lightbulb}"
+                   class="text-default">
+                    <img  ng-src="{{imgid}}">
+                    <br>
+                    电灯
+                </p>
+
+                <div class="btn-group justified nav-tabs">
+
+                    <a ng-click="sendCommand('device1','ON','lights')"
+                            ui-turn-on='lightbulb'
+
+                            class="btn btn-default" href>
+                        开 灯
+                    </a>
+                    <a ng-click="sendCommand('device1','OFF','lights')"
+                            ui-turn-off='lightbulb'
+
+                            class="btn btn-default" href>
+                        关 灯
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

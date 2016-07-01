@@ -1,0 +1,37 @@
+
+    <div ui-content-for="title">
+        <span>电源控制</span>
+    </div>
+
+    <div class="scrollable">
+        <div class="scrollable-content">
+            <div class="container-fluid section section-break" id="toggleExample">
+
+                <p ui-state id='lightbulb'
+                   ui-class="{'text-primary': lightbulb}"
+                   class="text-default">
+                    <img  ng-src="{{imgid}}" err-src="/shzt/computer-close.png">
+                    <br>
+                    电源
+                </p>
+
+                <div class="btn-group justified nav-tabs">
+
+                    <a ng-click="sendCommand('device5','ON','socket')"
+                            ui-turn-on='lightbulb'
+
+                            class="btn btn-default" href>
+                        打开电源
+                    </a>
+                    <a ng-click="sendCommand('device5','OFF','socket')"
+                            ui-turn-off='lightbulb'
+
+                            class="btn btn-default" href>
+                        关闭电源
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

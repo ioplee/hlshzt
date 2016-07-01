@@ -1,0 +1,37 @@
+
+    <div ui-content-for="title">
+        <span>远程唤醒和关机</span>
+    </div>
+
+    <div class="scrollable">
+        <div class="scrollable-content">
+            <div class="container-fluid section section-break" id="toggleExample">
+
+                <p ui-state id='lightbulb'
+                   ui-class="{'text-primary': lightbulb}"
+                   class="text-default">
+                    <img  ng-src="{{imgid}}" err-src="/shzt/computer-close.png">
+                    <br>
+                    电脑4
+                </p>
+
+                <div class="btn-group justified nav-tabs">
+
+                    <a ng-click="sendCommandComputer('device9','ON','computer')"
+                            ui-turn-on='lightbulb'
+
+                            class="btn btn-default" href>
+                        唤醒电脑
+                    </a>
+                    <a ng-click="sendCommandComputer('device9','OFF','computer')"
+                            ui-turn-off='lightbulb'
+
+                            class="btn btn-default" href>
+                        关闭电脑
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
