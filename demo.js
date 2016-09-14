@@ -26,16 +26,16 @@ app.run(function ($transform) {
 // 
 app.config(function ($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'home.html', reloadOnSearch: false});
-    $routeProvider.when('/lightsdevice1', {templateUrl: './device-pages/lights-1.html', reloadOnSearch: false});
-    $routeProvider.when('/lightsdevice2', {templateUrl: './device-pages/lights-2.html', reloadOnSearch: false});
-    $routeProvider.when('/lightsdevice3', {templateUrl: './device-pages/lights-3.html', reloadOnSearch: false});
-    $routeProvider.when('/lightsdevice4', {templateUrl: './device-pages/lights-4.html', reloadOnSearch: false});
-    $routeProvider.when('/socketdevice1', {templateUrl: './device-pages/socket-1.html', reloadOnSearch: false});
-    $routeProvider.when('/computerdevice1', {templateUrl: './device-pages/computer-1.html', reloadOnSearch: false});
-    $routeProvider.when('/computerdevice2', {templateUrl: './device-pages/computer-2.html', reloadOnSearch: false});
-    $routeProvider.when('/computerdevice3', {templateUrl: './device-pages/computer-3.html', reloadOnSearch: false});
-    $routeProvider.when('/computerdevice4', {templateUrl: './device-pages/computer-4.html', reloadOnSearch: false});
-    $routeProvider.when('/transdevice1', {templateUrl: './device-pages/TransDevice-1.html', reloadOnSearch: false});
+    $routeProvider.when('/lightsdevice1', {templateUrl: './device-pages/lights-1.html', reloadOnSearch: true});
+    $routeProvider.when('/lightsdevice2', {templateUrl: './device-pages/lights-2.html', reloadOnSearch: true});
+    $routeProvider.when('/lightsdevice3', {templateUrl: './device-pages/lights-3.html', reloadOnSearch: true});
+    $routeProvider.when('/lightsdevice4', {templateUrl: './device-pages/lights-4.html', reloadOnSearch: true});
+    $routeProvider.when('/socketdevice1', {templateUrl: './device-pages/socket-1.html', reloadOnSearch: true});
+    $routeProvider.when('/computerdevice1', {templateUrl: './device-pages/computer-1.html', reloadOnSearch: true});
+    $routeProvider.when('/computerdevice2', {templateUrl: './device-pages/computer-2.html', reloadOnSearch: true});
+    $routeProvider.when('/computerdevice3', {templateUrl: './device-pages/computer-3.html', reloadOnSearch: true});
+    $routeProvider.when('/computerdevice4', {templateUrl: './device-pages/computer-4.html', reloadOnSearch: true});
+    $routeProvider.when('/transdevice1', {templateUrl: './device-pages/TransDevice-1.html', reloadOnSearch: true});
 
 });
 
@@ -306,9 +306,12 @@ app.controller('MainController', function ($rootScope, $scope, $location,$http) 
         }
     };
 
+    var serverHost = '192.168.2.188';
+
     //light on click event for something
     $scope.sendCommand = function (deviceID,status,type) {
-        $http.get('http://localhost:8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status).
+        alert(deviceID+"-"+status);
+        $http.get('http://'+serverHost+':8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status).
             success(function(response){
                 console.log("data is :"+response+"   ");
             }
@@ -336,7 +339,7 @@ app.controller('MainController', function ($rootScope, $scope, $location,$http) 
     }
 
     $scope.sendCommandTrans = function (deviceID,status,code,mac) {
-        $http.get('http://localhost:8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status+'&code='+code+'&mac='+mac).
+        $http.get('http://'+serverHost+':8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status+'&code='+code+'&mac='+mac).
         success(function(response){
                 console.log("data is :   "+response);
             if(response.success == true){
@@ -350,13 +353,24 @@ app.controller('MainController', function ($rootScope, $scope, $location,$http) 
     }
 
     //COMPUTER REMOTE SHUTDOWN START
-    $scope.sendCommandComputer = function(deviceID,status,type){
-        if(status == 'ON'){
+    $scope.sendCommandComputer = function(mac,ip,type){
+
+        if(type == '1'){
+            $http.get('http://'+serverHost+':8080/shzt/service/cmd/_computerShutdown?mac='+mac+'&ip='+ip+'&type='+type).
+            success(function(response){
+                    console.log("data is :"+response+"   ");
+                }
+            );
             if(type == 'computer'){
                 $scope.imgid = "/shzt/computer-open.png";
             }
         }
-        if(status == 'OFF'){
+        if(type == '0'){
+            $http.get('http://'+ip+':8080/ComputerController/CCtl?ip='+ip).
+            success(function(response){
+                    console.log("data is :"+response+"   ");
+                }
+            );
             if(type == 'computer'){
                 $scope.imgid = "/shzt/computer-close.png";
             }
