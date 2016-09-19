@@ -26,16 +26,17 @@ app.run(function ($transform) {
 // 
 app.config(function ($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'home.html', reloadOnSearch: false});
-    $routeProvider.when('/lightsdevice1', {templateUrl: './device-pages/lights-1.html', reloadOnSearch: true});
-    $routeProvider.when('/lightsdevice2', {templateUrl: './device-pages/lights-2.html', reloadOnSearch: true});
-    $routeProvider.when('/lightsdevice3', {templateUrl: './device-pages/lights-3.html', reloadOnSearch: true});
-    $routeProvider.when('/lightsdevice4', {templateUrl: './device-pages/lights-4.html', reloadOnSearch: true});
-    $routeProvider.when('/socketdevice1', {templateUrl: './device-pages/socket-1.html', reloadOnSearch: true});
-    $routeProvider.when('/computerdevice1', {templateUrl: './device-pages/computer-1.html', reloadOnSearch: true});
-    $routeProvider.when('/computerdevice2', {templateUrl: './device-pages/computer-2.html', reloadOnSearch: true});
-    $routeProvider.when('/computerdevice3', {templateUrl: './device-pages/computer-3.html', reloadOnSearch: true});
-    $routeProvider.when('/computerdevice4', {templateUrl: './device-pages/computer-4.html', reloadOnSearch: true});
-    $routeProvider.when('/transdevice1', {templateUrl: './device-pages/TransDevice-1.html', reloadOnSearch: true});
+    $routeProvider.when('/lightsdevice1', {templateUrl: './device-pages/lights-1.html', reloadOnSearch: false});
+    $routeProvider.when('/lightsdevice2', {templateUrl: './device-pages/lights-2.html', reloadOnSearch: false});
+    $routeProvider.when('/lightsdevice3', {templateUrl: './device-pages/lights-3.html', reloadOnSearch: false});
+    $routeProvider.when('/lightsdevice4', {templateUrl: './device-pages/lights-4.html', reloadOnSearch: false});
+    $routeProvider.when('/lightsdevice5', {templateUrl: './device-pages/lights-5.html', reloadOnSearch: false});
+    $routeProvider.when('/socketdevice1', {templateUrl: './device-pages/socket-1.html', reloadOnSearch: false});
+    $routeProvider.when('/socketdevice2', {templateUrl: './device-pages/socket-2.html', reloadOnSearch: false});
+    $routeProvider.when('/socketdevice3', {templateUrl: './device-pages/socket-3.html', reloadOnSearch: false});
+    $routeProvider.when('/socketdevice4', {templateUrl: './device-pages/socket-4.html', reloadOnSearch: false});
+    $routeProvider.when('/transdevice1', {templateUrl: './device-pages/TransDevice-1.html', reloadOnSearch: false});
+    $routeProvider.when('/transdevice2', {templateUrl: './device-pages/TransDevice-2.html', reloadOnSearch: false});
 
 });
 
