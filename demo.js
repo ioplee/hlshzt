@@ -1,7 +1,7 @@
-// 
-// Here is how to define your module 
+//
+// Here is how to define your module
 // has dependent on mobile-angular-ui
-// 
+//
 var app = angular.module('MobileAngularUiExamples', [
     'ngRoute',
     'mobile-angular-ui',
@@ -19,11 +19,11 @@ app.run(function ($transform) {
     window.$transform = $transform;
 });
 
-// 
+//
 // You can configure ngRoute as always, but to take advantage of SharedState location
-// feature (i.e. close sidebar on backbutton) you should setup 'reloadOnSearch: false' 
+// feature (i.e. close sidebar on backbutton) you should setup 'reloadOnSearch: false'
 // in order to avoid unwanted routing.
-// 
+//
 app.config(function ($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'home.html', reloadOnSearch: false});
     $routeProvider.when('/lightsdevice1', {templateUrl: './device-pages/lights-1.html', reloadOnSearch: false});
@@ -35,14 +35,18 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/socketdevice2', {templateUrl: './device-pages/socket-2.html', reloadOnSearch: false});
     $routeProvider.when('/socketdevice3', {templateUrl: './device-pages/socket-3.html', reloadOnSearch: false});
     $routeProvider.when('/socketdevice4', {templateUrl: './device-pages/socket-4.html', reloadOnSearch: false});
+    $routeProvider.when('/computerdevice1', {templateUrl: './device-pages/computer-1.html', reloadOnSearch: false});
+    $routeProvider.when('/computerdevice2', {templateUrl: './device-pages/computer-2.html', reloadOnSearch: false});
+    $routeProvider.when('/computerdevice3', {templateUrl: './device-pages/computer-3.html', reloadOnSearch: false});
+    $routeProvider.when('/computerdevice4', {templateUrl: './device-pages/computer-4.html', reloadOnSearch: false});
     $routeProvider.when('/transdevice1', {templateUrl: './device-pages/TransDevice-1.html', reloadOnSearch: false});
     $routeProvider.when('/transdevice2', {templateUrl: './device-pages/TransDevice-2.html', reloadOnSearch: false});
 
 });
 
-// 
+//
 // `$touch example`
-// 
+//
 
 app.directive('toucharea', ['$touch', function ($touch) {
     // Runs during compile
@@ -119,7 +123,7 @@ app.directive('dragToDismiss', function ($drag, $parse, $timeout) {
 });
 
 //
-// Another `$drag` usage example: this is how you could create 
+// Another `$drag` usage example: this is how you could create
 // a touch enabled "deck of cards" carousel. See `carousel.html` for markup.
 //
 app.directive('carousel', function () {
@@ -250,7 +254,7 @@ app.directive('dragMe', ['$drag', function ($drag) {
 
 
 //
-// For this trivial demo we have just a unique MainController 
+// For this trivial demo we have just a unique MainController
 // for everything
 //
 app.controller('MainController', function ($rootScope, $scope, $location,$http) {
@@ -307,13 +311,12 @@ app.controller('MainController', function ($rootScope, $scope, $location,$http) 
         }
     };
 
-    var serverHost = '192.168.2.188';
+    var serverHost = '192.168.1.245';
 
     //light on click event for something
     $scope.sendCommand = function (deviceID,status,type) {
-        alert(deviceID+"-"+status);
         $http.get('http://'+serverHost+':8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status).
-            success(function(response){
+        success(function(response){
                 console.log("data is :"+response+"   ");
             }
         );
@@ -343,11 +346,11 @@ app.controller('MainController', function ($rootScope, $scope, $location,$http) 
         $http.get('http://'+serverHost+':8080/shzt/service/cmd/_command?deviceID='+deviceID+'&status='+status+'&code='+code+'&mac='+mac).
         success(function(response){
                 console.log("data is :   "+response);
-            if(response.success == true){
-                $scope.responsemsg = response.msg;
-            }else{
-                $scope.responsemsg = response.msg;
-            }
+                if(response.success == true){
+                    $scope.responsemsg = response.msg;
+                }else{
+                    $scope.responsemsg = response.msg;
+                }
             }
         );
 

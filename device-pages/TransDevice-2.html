@@ -1,12 +1,13 @@
 <div ui-content-for="title">
-    <span>红外控制</span>
+    <span>电视机2号</span>
+    &nbsp;&nbsp;&nbsp;&nbsp; <span style=""><a href="/shzt/index.html"> 返回主界面</a></span>
 </div>
 
 <div class="scrollable">
     <div class="scrollable-content">
 
         <div class="container-fluid section section-break" id="lights">
-            <center><span style="align-content: center;font-size: large">电视机1</span></center>
+            <center><span style="align-content: center;font-size: large">电视机2</span></center>
             <label>控制模式</label>
             <br>
             <label style="align-content: center">{{responsemsg}}</label>
@@ -16,133 +17,32 @@
 
 
                    class="btn btn-default" href>
-                    控制1
+                    电源按键
                 </a>
+
+            </div>
+            <br>
+            <div class="btn-group justified nav-tabs">
+
+
                 <a ng-click="sendCommandTrans('device51','134','02','F7A43804006F0D00')"
 
 
                    class="btn btn-default" href>
-                    控制2
+                   模式选择
                 </a>
             </div>
+            <br>
             <div class="btn-group justified nav-tabs">
                 <a ng-click="sendCommandTrans('device51','134','03','F7A43804006F0D00')"
 
 
                    class="btn btn-default" href>
-                    控制3
-                </a>
-                <a ng-click="sendCommandTrans('device51','134','04','F7A43804006F0D00')"
-
-
-                   class="btn btn-default" href>
-                    控制4
+                   确认按钮
                 </a>
             </div>
-            <div class="btn-group justified nav-tabs">
-
-                <a ng-click="sendCommandTrans('device51','134','05','F7A43804006F0D00')"
 
 
-                   class="btn btn-default" href>
-                    控制5
-                </a>
-                <a ng-click="sendCommandTrans('device51','134','06','F7A43804006F0D00')"
-
-
-                   class="btn btn-default" href>
-                    控制6
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ng-click="sendCommandTrans('device51','134','07','F7A43804006F0D00')"
-
-
-                   class="btn btn-default" href>
-                    控制7
-                </a>
-                <a ng-click="sendCommandTrans('device51','134','08','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    控制8
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ng-click="sendCommandTrans('device51','134','09','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    控制9
-                </a>
-                <a ng-click="sendCommandTrans('device51','134','10','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    控制10
-                </a>
-            </div>
-            <br>
-            <label>学习模式</label>
-            <div class="btn-group justified nav-tabs">
-
-                <a ng-click="sendCommandTrans('device51','136','01','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习1
-                </a>
-                <a ng-click="sendCommandTrans('device51','136','02','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习2
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ng-click="sendCommandTrans('device51','136','03','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习3
-                </a>
-                <a ng-click="sendCommandTrans('device51','136','04','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习4
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-
-                <a ng-click="sendCommandTrans('device51','136','05','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习5
-                </a>
-                <a ng-click="sendCommandTrans('device51','136','06','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习6
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ng-click="sendCommandTrans('device51','136','07','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习7
-                </a>
-                <a ng-click="sendCommandTrans('device51','136','08','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习8
-                </a>
-            </div>
-            <div class="btn-group justified nav-tabs">
-                <a ng-click="sendCommandTrans('device51','136','09','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习9
-                </a>
-                <a ng-click="sendCommandTrans('device51','136','10','F7A43804006F0D00')"
-
-                   class="btn btn-default" href>
-                    学习10
-                </a>
-            </div>
         </div>
     </div>
 </div>

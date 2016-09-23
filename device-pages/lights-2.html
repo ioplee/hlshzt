@@ -1,6 +1,7 @@
 
     <div ui-content-for="title">
-        <span>2号灯</span>
+        <span>LED大屏</span>
+        &nbsp;&nbsp;&nbsp;&nbsp; <span style=""><a href="/shzt/index.html"> 返回主界面</a></span>
     </div>
 
     <div class="scrollable">
@@ -11,7 +12,7 @@
                    ui-class="{'text-primary': lightbulb}"
                    class="text-default">
                     <img  ng-src="{{imgid}}" >
-                    <br>电灯
+                    <br>LED大屏
                 </p>
 
                 <div class="btn-group justified nav-tabs">
@@ -19,13 +20,13 @@
                        ui-turn-on='lightbulb'
 
                        class="btn btn-default" href>
-                        开 灯
+                        打开
                     </a>
                     <a ng-click="sendCommand('device2','OFF','lights')"
                        ui-turn-off='lightbulb'
 
                        class="btn btn-default" href>
-                        关 灯
+                        关闭
                     </a>
                 </div>
             </div>

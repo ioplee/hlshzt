@@ -1,36 +1,38 @@
 
-    <div ui-content-for="title">
-        <span>4号灯</span>
-    </div>
+<div ui-content-for="title">
+    <span>大厅灯第二排</span>
+    &nbsp;&nbsp;&nbsp;&nbsp; <span style=""><a href="/shzt/index.html"> 返回主界面</a></span>
+</div>
 
-    <div class="scrollable">
-        <div class="scrollable-content">
-            <div class="container-fluid section section-break" id="toggleExample">
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="container-fluid section section-break" id="toggleExample">
 
-                <p ui-state id='lightbulb'
-                   ui-class="{'text-primary': lightbulb}"
-                   class="text-default">
-                    <img  ng-src="{{imgid}}" >
-                    <br>电灯
-                </p>
+            <p ui-state id='lightbulb'
+               ui-class="{'text-primary': lightbulb}"
+               class="text-default">
+                <img  ng-src="{{imgid}}" >
+                <br>
+                大厅灯第2二排
+            </p>
 
-                <div class="btn-group justified nav-tabs">
+            <div class="btn-group justified nav-tabs">
 
-                    <a ng-click="sendCommand('device4','ON','lights')"
-                       ui-turn-on='lightbulb'
+                <a ng-click="sendCommand('device4','ON','lights')"
+                   ui-turn-on='lightbulb'
 
-                       class="btn btn-default" href>
-                        开 灯
-                    </a>
-                    <a ng-click="sendCommand('device4','OFF','lights')"
-                       ui-turn-off='lightbulb'
+                   class="btn btn-default" href>
+                    开 灯
+                </a>
+                <a ng-click="sendCommand('device4','OFF','lights')"
+                   ui-turn-off='lightbulb'
 
-                       class="btn btn-default" href>
-                        关 灯
-                    </a>
-                </div>
+                   class="btn btn-default" href>
+                    关 灯
+                </a>
             </div>
         </div>
     </div>
+</div>
 
 

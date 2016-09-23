@@ -1,6 +1,7 @@
 
     <div ui-content-for="title">
-        <span>电源控制</span>
+        <span>取票机</span>
+        &nbsp;&nbsp;&nbsp;&nbsp; <span style=""><a href="/shzt/index.html"> 返回主界面</a></span>
     </div>
 
     <div class="scrollable">
@@ -12,7 +13,7 @@
                    class="text-default">
                     <img  ng-src="{{imgid}}" err-src="/shzt/computer-close.png">
                     <br>
-                    插座1
+                    大厅取票机
                 </p>
 
                 <div class="btn-group justified nav-tabs">
@@ -21,13 +22,13 @@
                             ui-turn-on='lightbulb'
 
                             class="btn btn-default" href>
-                        打开电源
+                        打开设备
                     </a>
                     <a ng-click="sendCommand('device6','OFF','socket')"
                             ui-turn-off='lightbulb'
 
                             class="btn btn-default" href>
-                        关闭电源
+                        关闭设备
                     </a>
                 </div>
             </div>
